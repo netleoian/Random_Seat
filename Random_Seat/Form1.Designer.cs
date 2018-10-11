@@ -121,6 +121,7 @@
             this.Button_Random.TabIndex = 8;
             this.Button_Random.Text = "隨機排座";
             this.Button_Random.UseVisualStyleBackColor = true;
+            this.Button_Random.Click += new System.EventHandler(this.Button_Random_Click);
             // 
             // Form1
             // 
