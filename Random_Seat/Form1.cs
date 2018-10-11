@@ -34,7 +34,7 @@ namespace Random_Seat
             for (int C = 0; C < Cols_Count; C++)
                 dataset.Tables[0].Columns.Add();
 
-            for (int R = 0; R < Rows_Count - 1; R++)
+            for (int R = 0; R < Rows_Count; R++)
                 dataset.Tables[0].Rows.Add(dataset.Tables[0].NewRow());
             dataGridView1.DataSource = dataset.Tables[0];
         }
@@ -43,8 +43,15 @@ namespace Random_Seat
         {
             if (e.RowIndex > -1 && e.ColumnIndex > -1)
             {
-                dataGridView1[e.X, e.Y].Value = "無電腦";
-                dataGridView1[e.X, e.Y].Style.BackColor = Color.Black;
+                if (!dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString().Equals("無電腦"))
+                {
+                    dataGridView1[e.ColumnIndex, e.RowIndex].Value = "無電腦";
+                    dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Gray;
+                }
+                else {
+                    dataGridView1[e.ColumnIndex, e.RowIndex].Value = "";
+                    dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.White;
+                }
             }
         }
     }
