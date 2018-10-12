@@ -37,6 +37,7 @@
             this.Divide_Check = new System.Windows.Forms.CheckBox();
             this.Button_Generate = new System.Windows.Forms.Button();
             this.Button_Random = new System.Windows.Forms.Button();
+            this.button_Export = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             this.Names.Location = new System.Drawing.Point(512, 0);
             this.Names.Multiline = true;
             this.Names.Name = "Names";
+            this.Names.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Names.Size = new System.Drawing.Size(288, 281);
             this.Names.TabIndex = 1;
             // 
@@ -96,7 +98,7 @@
             // Divide_Check
             // 
             this.Divide_Check.AutoSize = true;
-            this.Divide_Check.Location = new System.Drawing.Point(520, 342);
+            this.Divide_Check.Location = new System.Drawing.Point(520, 339);
             this.Divide_Check.Name = "Divide_Check";
             this.Divide_Check.Size = new System.Drawing.Size(60, 16);
             this.Divide_Check.TabIndex = 6;
@@ -123,11 +125,22 @@
             this.Button_Random.UseVisualStyleBackColor = true;
             this.Button_Random.Click += new System.EventHandler(this.Button_Random_Click);
             // 
+            // button_Export
+            // 
+            this.button_Export.Location = new System.Drawing.Point(601, 335);
+            this.button_Export.Name = "button_Export";
+            this.button_Export.Size = new System.Drawing.Size(75, 23);
+            this.button_Export.TabIndex = 9;
+            this.button_Export.Text = "輸出CSV";
+            this.button_Export.UseVisualStyleBackColor = true;
+            this.button_Export.Click += new System.EventHandler(this.button_Export_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_Export);
             this.Controls.Add(this.Button_Random);
             this.Controls.Add(this.Button_Generate);
             this.Controls.Add(this.Divide_Check);
@@ -157,6 +170,7 @@
         private System.Windows.Forms.CheckBox Divide_Check;
         private System.Windows.Forms.Button Button_Generate;
         private System.Windows.Forms.Button Button_Random;
+        private System.Windows.Forms.Button button_Export;
     }
 }
 
