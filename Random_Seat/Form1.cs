@@ -51,20 +51,24 @@ namespace Random_Seat
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             //客製化
-            if (e.RowIndex > -1 && e.ColumnIndex > -1)
-            {
-                if (!dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString().Equals("無電腦"))
+           for(int i=0;i< dataGridView1.GetCellCount(DataGridViewElementStates.Selected); i++) { 
+                if (e.RowIndex > -1 && e.ColumnIndex > -1)
                 {
-                    dataGridView1[e.ColumnIndex, e.RowIndex].Value = "無電腦";
-                    dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Gray;
-                  //  NA.i.Add(e.ColumnIndex + "," + e.RowIndex);
-                }
-                else {
-                    dataGridView1[e.ColumnIndex, e.RowIndex].Value = String.Empty;
-                    dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.White;
-                    //NA.Remove(e.ColumnIndex + "," + e.RowIndex);
+                    if (!dataGridView1[dataGridView1.SelectedCells[i].ColumnIndex, dataGridView1.SelectedCells[i].RowIndex].Value.ToString().Equals("無電腦"))
+                    {
+                        dataGridView1[dataGridView1.SelectedCells[i].ColumnIndex, dataGridView1.SelectedCells[i].RowIndex].Value = "無電腦";
+                        dataGridView1[dataGridView1.SelectedCells[i].ColumnIndex, dataGridView1.SelectedCells[i].RowIndex].Style.BackColor = Color.Gray;
+                        //  NA.i.Add(e.ColumnIndex + "," + e.RowIndex);
+                    }
+                    else
+                    {
+                        dataGridView1[dataGridView1.SelectedCells[i].ColumnIndex, dataGridView1.SelectedCells[i].RowIndex].Value = String.Empty;
+                        dataGridView1[dataGridView1.SelectedCells[i].ColumnIndex, dataGridView1.SelectedCells[i].RowIndex].Style.BackColor = Color.White;
+                        //NA.Remove(e.ColumnIndex + "," + e.RowIndex);
+                    }
                 }
             }
+            dataGridView1.Refresh();
         }
         private void cleartable() {
         }
