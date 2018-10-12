@@ -124,7 +124,7 @@ namespace Random_Seat
                 }
                 text.Append("\n");
             }
-            System.IO.File.WriteAllText(System.Windows.Forms.Application.StartupPath+"output.csv",text.ToString());
+            System.IO.File.WriteAllText(System.Windows.Forms.Application.StartupPath+"output.csv",text.ToString(),Encoding.UTF8);
         }
     }
 }
